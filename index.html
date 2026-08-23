@@ -2,497 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRK Media Pvt Ltd - CMS</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRK Media Pvt Ltd CMS</title>
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;
- font-family:Arial,Helvetica,sans-serif;
- background:#080e1b;
- color:#e9eef8;
-}
-.sidebar{
- position:fixed;
- left:0;top:0;bottom:0;
- width:240px;
- background:#0d1526;
- border-right:1px solid #202c43;
- padding:18px 12px;
-}
-.logo{
- font-size:25px;
- font-weight:900;
- padding:8px 10px 24px;
-}
-.logo span{color:#3d8cff}
-.section{
- color:#65748c;
- font-size:10px;
- letter-spacing:1.5px;
- padding:12px 10px 6px;
-}
-.nav{
- display:flex;
- align-items:center;
- gap:11px;
- padding:11px 12px;
- margin:2px 0;
- border-radius:8px;
- color:#aeb9cc;
- text-decoration:none;
- font-size:14px;
-}
-.nav:hover,.nav.active{
- background:#1769e8;
- color:white;
-}
-.badge{
- margin-left:auto;
- background:#e33b48;
- color:white;
- padding:2px 7px;
- border-radius:12px;
- font-size:10px;
-}
-.sidebar-bottom{
- position:absolute;
- bottom:20px;
- left:20px;
- color:#fff;
- font-weight:bold;
-}
-.sidebar-bottom small{
- display:block;
- color:#718099;
- font-weight:normal;
- margin-top:5px;
-}
-main{margin-left:240px}
-header{
- height:68px;
- background:#0b1323;
- border-bottom:1px solid #202c43;
- display:flex;
- align-items:center;
- justify-content:space-between;
- padding:0 28px;
-}
-.search{
- width:430px;
- background:#121c30;
- border:1px solid #293650;
- border-radius:25px;
- padding:11px 16px;
- color:#8190a8;
-}
-.search input{
- background:none;
- border:0;
- outline:0;
- color:white;
- width:90%;
-}
-.profile{
- color:#dce4f1;
- font-size:13px;
-}
-.content{padding:27px}
-.heading{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-bottom:20px;
-}
-.heading h1{
- margin:0;
- font-size:26px;
-}
-.heading p{
- margin:6px 0 0;
- color:#74839b;
- font-size:12px;
-}
-.btn{
- background:#1769e8;
- color:white;
- border:0;
- border-radius:7px;
- padding:11px 17px;
- font-weight:bold;
-}
-.cards{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:15px;
-}
-.card,.panel{
- background:#101a2d;
- border:1px solid #202d47;
- border-radius:10px;
-}
-.card{padding:18px}
-.card label{
- color:#8491a8;
- font-size:12px;
-}
-.card strong{
- display:block;
- font-size:29px;
- margin:10px 0;
-}
-.green{
- color:#4ed78a;
- font-size:11px;
-}
-.rows{
- display:grid;
- grid-template-columns:1.5fr 1fr;
- gap:15px;
- margin-top:15px;
-}
-.panel{padding:18px}
-.panel h3{
- margin:0 0 15px;
- font-size:15px;
-}
-.chart{
- height:190px;
- display:flex;
- align-items:flex-end;
- gap:7px;
- padding:10px;
-}
-.bar{
- flex:1;
- background:#2676ee;
- border-radius:4px 4px 0 0;
-}
-.big{
- font-size:29px;
- font-weight:bold;
- margin:25px 0 5px;
-}
-.muted{
- color:#71809a;
- font-size:12px;
-}
-.list{
- margin-top:18px;
-}
-.item{
- display:flex;
- justify-content:space-between;
- padding:13px 0;
- border-bottom:1px solid #202b42;
- font-size:13px;
-}
-.status{
- color:#50db91;
- background:#123829;
- padding:4px 8px;
- border-radius:12px;
- font-size:10px;
-}
-table{
- width:100%;
- border-collapse:collapse;
-}
-th,td{
- text-align:left;
- padding:12px 7px;
- border-bottom:1px solid #202b42;
- font-size:12px;
-}
-th{color:#71809a}
-footer{
- text-align:center;
- color:#65738a;
- padding:18px;
- border-top:1px solid #202c43;
- margin-top:20px;
- font-size:11px;
-}
-
-@media(max-width:900px){
- .sidebar{width:70px}
- .logo{font-size:18px;text-align:center}
- .logo span,.section,.nav span,.sidebar-bottom{display:none}
- .nav{justify-content:center}
- main{margin-left:70px}
- .cards{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
- .cards,.rows{grid-template-columns:1fr}
- header{padding:0 12px}
- .search{width:200px}
- .content{padding:15px}
-}
+*{box-sizing:border-box}body{margin:0;background:#08101d;color:#eaf0f8;font-family:Arial,sans-serif}
+aside{position:fixed;left:0;top:0;bottom:0;width:230px;background:#0d1728;border-right:1px solid #24324a;padding:18px 12px;overflow:auto}
+.logo{font-size:24px;font-weight:bold;padding:8px 10px 25px}.logo b{color:#2680ff}
+.nav{padding:11px 13px;margin:3px 0;border-radius:7px;color:#aebbd0;cursor:pointer;font-size:14px}
+.nav:hover,.nav.on{background:#1769e8;color:white}.group{font-size:10px;color:#65748d;margin:17px 10px 7px;letter-spacing:1px}
+.badge{float:right;background:#df3545;color:white;border-radius:10px;padding:2px 7px;font-size:10px}
+main{margin-left:230px}header{height:65px;border-bottom:1px solid #24324a;background:#0b1424;display:flex;align-items:center;justify-content:space-between;padding:0 25px}
+.search{background:#121e32;border:1px solid #2a3954;border-radius:22px;padding:10px 16px;width:430px;color:#8b99ae}
+.search input{background:none;border:0;outline:0;color:white;width:90%}
+.user{font-size:13px}.wrap{padding:25px}.top{display:flex;justify-content:space-between;align-items:center}.top h1{margin:0;font-size:25px}.muted{color:#77869d;font-size:12px;margin-top:6px}
+button{background:#1769e8;color:white;border:0;border-radius:7px;padding:10px 15px;font-weight:bold}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.card,.panel{background:#101b2e;border:1px solid #24334c;border-radius:10px;padding:18px}.card small{color:#7d8ca4}.card strong{display:block;font-size:27px;margin:9px 0}.green{color:#48d88b;font-size:11px}
+.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;margin-top:14px}.panel h3{margin:0 0 16px;font-size:15px}
+.chart{height:170px;display:flex;align-items:end;gap:7px;padding:10px}.bar{flex:1;background:#2478ed;border-radius:4px 4px 0 0}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px 7px;border-bottom:1px solid #26344b;font-size:12px}th{color:#73829a}
+.status{color:#4cda8d;background:#12392a;padding:4px 8px;border-radius:12px;font-size:10px}
+.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.action{padding:18px;background:#13213a;border:1px solid #2a3b58;border-radius:8px;cursor:pointer}
+@media(max-width:800px){aside{width:68px}.logo{font-size:16px}.logo b,.nav span,.group{display:none}.nav{text-align:center}main{margin-left:68px}.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.search{width:220px}}
 </style>
 </head>
-
 <body>
 
-<aside class="sidebar">
+<aside>
+<div class="logo">PRK <b>MEDIA</b></div>
 
-<div class="logo">PRK <span>MEDIA</span></div>
+<div class="group">MAIN</div>
+<div class="nav on" onclick="show('Overview',this)">⌂ <span>Overview</span></div>
+<div class="nav" onclick="show('Dashboard',this)">▣ <span>Dashboard</span></div>
+<div class="nav" onclick="show('Assets',this)">♫ <span>Assets</span></div>
+<div class="nav" onclick="show('Claims',this)">© <span>Claims</span></div>
+<div class="nav" onclick="show('Reference Files',this)">▤ <span>Reference Files</span></div>
 
-<div class="section">MAIN</div>
+<div class="group">RIGHTS</div>
+<div class="nav" onclick="show('Policies',this)">◉ <span>Policies</span></div>
+<div class="nav" onclick="show('Match Rules',this)">⚑ <span>Match Rules</span></div>
+<div class="nav" onclick="show('DMCA',this)">◫ <span>DMCA</span></div>
+<div class="nav" onclick="show('Takedowns',this)">↘ <span>Takedowns</span></div>
+<div class="nav" onclick="show('Strikes',this)">! <span>Strikes</span><b class="badge">3</b></div>
+<div class="nav" onclick="show('Ownership',this)">♜ <span>Ownership</span></div>
 
-<div class="nav active">⌂ <span>Overview</span></div>
-<div class="nav">▣ <span>Dashboard</span></div>
-<div class="nav">♫ <span>Assets</span></div>
-<div class="nav">© <span>Claims</span></div>
-<div class="nav">▤ <span>Reference Files</span></div>
-
-<div class="section">RIGHTS</div>
-
-<div class="nav">◉ <span>Policies</span></div>
-<div class="nav">⚑ <span>Match Rules</span></div>
-<div class="nav">◫ <span>DMCA</span></div>
-<div class="nav">↘ <span>Takedowns</span></div>
-<div class="nav">! <span>Strikes</span><b class="badge">3</b></div>
-<div class="nav">♜ <span>Ownership</span></div>
-
-<div class="section">BUSINESS</div>
-
-<div class="nav">▤ <span>Reports</span></div>
-<div class="nav">₹ <span>Revenue</span></div>
-<div class="nav">◒ <span>Analytics</span></div>
-<div class="nav">▦ <span>Channels</span></div>
-<div class="nav">♙ <span>Users & Permissions</span></div>
-<div class="nav">⚙ <span>Settings</span></div>
-
-<div class="sidebar-bottom">
-PRK Media Pvt Ltd
-<small>Worldwide Copyright Management</small>
-</div>
-
+<div class="group">BUSINESS</div>
+<div class="nav" onclick="show('Reports',this)">▤ <span>Reports</span></div>
+<div class="nav" onclick="show('Revenue',this)">₹ <span>Revenue</span></div>
+<div class="nav" onclick="show('Analytics',this)">◒ <span>Analytics</span></div>
+<div class="nav" onclick="show('Channels',this)">▦ <span>Channels</span></div>
+<div class="nav" onclick="show('Users & Permissions',this)">♙ <span>Users</span></div>
+<div class="nav" onclick="show('Settings',this)">⚙ <span>Settings</span></div>
 </aside>
 
 <main>
-
 <header>
-
-<div class="search">
-⌕
-<input placeholder="Search assets, claims, channels...">
-</div>
-
-<div class="profile">
-PRK Media Pvt Ltd &nbsp; ◉
-</div>
-
+<div class="search">⌕ <input placeholder="Search assets, claims, channels..."></div>
+<div class="user">PRK Media Pvt Ltd ▾</div>
 </header>
 
-<section class="content">
-
-<div class="heading">
-
-<div>
-<h1>Overview</h1>
-<p>Real-time overview of your Content ID performance</p>
-</div>
-
-<button class="btn">Last 28 Days ▾</button>
-
-</div>
+<div class="wrap" id="page">
+<div class="top"><div><h1>Overview</h1><div class="muted">PRK Media Pvt Ltd · Copyright Management CMS</div></div><button>Last 28 Days ▾</button></div>
 
 <div class="cards">
-
-<div class="card">
-<label>TOTAL ASSETS</label>
-<strong>1,500</strong>
-<span class="green">↑ Active Catalog</span>
+<div class="card"><small>TOTAL ASSETS</small><strong>1,500</strong><span class="green">● Active Catalog</span></div>
+<div class="card"><small>ACTIVE CLAIMS</small><strong>0</strong><span class="green">● Ready for API</span></div>
+<div class="card"><small>VIDEOS SCANNED</small><strong>0</strong><span class="green">● API Pending</span></div>
+<div class="card"><small>TOTAL REVENUE</small><strong>₹0</strong><span class="green">● This Period</span></div>
 </div>
 
-<div class="card">
-<label>ACTIVE CLAIMS</label>
-<strong>0</strong>
-<span class="green">Ready for Integration</span>
+<div class="grid">
+<div class="panel"><h3>Claims Over Time</h3><div class="chart">
+<div class="bar" style="height:35%"></div><div class="bar" style="height:52%"></div><div class="bar" style="height:43%"></div><div class="bar" style="height:70%"></div><div class="bar" style="height:58%"></div><div class="bar" style="height:82%"></div><div class="bar" style="height:64%"></div><div class="bar" style="height:94%"></div><div class="bar" style="height:76%"></div><div class="bar" style="height:88%"></div>
+</div></div>
+
+<div class="panel"><h3>System Summary</h3>
+<table><tr><td>Reference Assets</td><td>1,500</td></tr><tr><td>Connected Channels</td><td>3</td></tr><tr><td>Pending Takedowns</td><td>0</td></tr><tr><td>Strikes</td><td>3</td></tr></table>
+</div></div>
+
+<div class="grid">
+<div class="panel"><h3>Recent Claims</h3><table><tr><th>Video</th><th>Policy</th><th>Status</th></tr><tr><td>No API data</td><td>Monetize</td><td><span class="status">Ready</span></td></tr><tr><td>No API data</td><td>Track</td><td><span class="status">Ready</span></td></tr></table></div>
+
+<div class="panel"><h3>Connected Channels</h3><div class="actions"><div class="action">PRK Media Pvt Ltd<br><span class="status">Connected</span></div><div class="action">Heena Sain Official<br><span class="status">Connected</span></div><div class="action">PUSHPA JAAT OFFICIAL<br><span class="status">Connected</span></div></div></div>
 </div>
 
-<div class="card">
-<label>VIDEOS SCANNED</label>
-<strong>0</strong>
-<span class="green">Waiting for API</span>
+<div class="panel" style="margin-top:14px"><h3>Latest Assets</h3><table><tr><th>Asset</th><th>Type</th><th>Matches</th><th>Status</th></tr>
+<tr><td>Ek Araj Mari Momaji</td><td>Audio</td><td>—</td><td><span class="status">Ready</span></td></tr>
+<tr><td>Ghoda Walia Laj Rakhjo</td><td>Audio</td><td>—</td><td><span class="status">Ready</span></td></tr>
+<tr><td>Mharo Karobar Thore Nam</td><td>Audio</td><td>—</td><td><span class="status">Ready</span></td></tr>
+<tr><td>Moma Dhani Avtari</td><td>Audio</td><td>—</td><td><span class="status">Ready</span></td></tr>
+</table></div>
 </div>
-
-<div class="card">
-<label>TOTAL REVENUE</label>
-<strong>₹0</strong>
-<span class="green">This Period</span>
-</div>
-
-</div>
-
-<div class="rows">
-
-<div class="panel">
-
-<h3>Claims Over Time</h3>
-
-<div class="chart">
-
-<div class="bar" style="height:35%"></div>
-<div class="bar" style="height:48%"></div>
-<div class="bar" style="height:42%"></div>
-<div class="bar" style="height:65%"></div>
-<div class="bar" style="height:52%"></div>
-<div class="bar" style="height:78%"></div>
-<div class="bar" style="height:59%"></div>
-<div class="bar" style="height:90%"></div>
-<div class="bar" style="height:70%"></div>
-<div class="bar" style="height:96%"></div>
-<div class="bar" style="height:74%"></div>
-<div class="bar" style="height:88%"></div>
-
-</div>
-
-</div>
-
-<div class="panel">
-
-<h3>Revenue Overview</h3>
-
-<div class="big">₹0</div>
-
-<div class="muted">
-No revenue data connected yet
-</div>
-
-<div class="list">
-
-<div class="item">
-<span>Monetize</span>
-<b>0</b>
-</div>
-
-<div class="item">
-<span>Track</span>
-<b>0</b>
-</div>
-
-<div class="item">
-<span>Block</span>
-<b>0</b>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="rows">
-
-<div class="panel">
-
-<h3>Recent Claims</h3>
-
-<table>
-
-<tr>
-<th>Video</th>
-<th>Asset</th>
-<th>Policy</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td>—</td>
-<td>—</td>
-<td>Monetize</td>
-<td><span class="status">Ready</span></td>
-</tr>
-
-<tr>
-<td>—</td>
-<td>—</td>
-<td>Track</td>
-<td><span class="status">Ready</span></td>
-</tr>
-
-</table>
-
-</div>
-
-<div class="panel">
-
-<h3>Connected Channels</h3>
-
-<div class="item">
-<span>PRK Media Pvt Ltd</span>
-<span class="status">Connected</span>
-</div>
-
-<div class="item">
-<span>Heena Sain Official</span>
-<span class="status">Connected</span>
-</div>
-
-<div class="item">
-<span>PUSHPA JAAT OFFICIAL</span>
-<span class="status">Connected</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" style="margin-top:15px">
-
-<h3>Latest Assets</h3>
-
-<table>
-
-<tr>
-<th>Asset Name</th>
-<th>Type</th>
-<th>Matches</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td>Ek Araj Mari Momaji</td>
-<td>Audio</td>
-<td>—</td>
-<td><span class="status">Ready</span></td>
-</tr>
-
-<tr>
-<td>Ghoda Walia Laj Rakhjo</td>
-<td>Audio</td>
-<td>—</td>
-<td><span class="status">Ready</span></td>
-</tr>
-
-<tr>
-<td>Mharo Karobar Thore Nam</td>
-<td>Audio</td>
-<td>—</td>
-<td><span class="status">Ready</span></td>
-</tr>
-
-<tr>
-<td>Moma Dhani Avtari</td>
-<td>Audio</td>
-<td>—</td>
-<td><span class="status">Ready</span></td>
-</tr>
-
-</table>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 PRK Media Pvt Ltd · All Rights Reserved · CMS Dashboard v1.0
-</footer>
-
 </main>
 
+<script>
+function show(name,el){
+document.querySelectorAll('.nav').forEach(x=>x.classList.remove('on'));
+el.classList.add('on');
+if(name==='Overview'){location.reload();return}
+document.getElementById('page').innerHTML=
+'<div class="top"><div><h1>'+name+'</h1><div class="muted">PRK Media Pvt Ltd · Copyright Management CMS</div></div><button>+ Add New</button></div>'+
+'<div class="cards"><div class="card"><small>STATUS</small><strong>Ready</strong><span class="green">● System Active</span></div><div class="card"><small>ASSETS</small><strong>1,500</strong><span class="green">● Catalog</span></div><div class="card"><small>CONNECTED</small><strong>3</strong><span class="green">● Channels</span></div><div class="card"><small>API</small><strong>Pending</strong><span class="green">● Integration</span></div></div>'+
+'<div class="panel" style="margin-top:15px"><h3>'+name+' Management</h3><table><tr><th>Name</th><th>Type</th><th>Status</th><th>Action</th></tr><tr><td>PRK Media Catalog</td><td>Music Rights</td><td><span class="status">Active</span></td><td>View</td></tr><tr><td>PRK Media Pvt Ltd</td><td>Copyright Owner</td><td><span class="status">Active</span></td><td>Manage</td></tr></table></div>';
+}
+</script>
 </body>
 </html>
