@@ -10,7 +10,6 @@ import {
   DollarSign,
   BarChart3,
   Users,
-  ChevronDown,
   Menu,
   X,
 } from 'lucide-react'
@@ -41,16 +40,16 @@ const Sidebar: React.FC = () => {
     {
       title: 'MANAGEMENT',
       items: [
-        { icon: Settings, label: 'Policies', path: '/policies' },
-        { icon: Settings, label: 'Match Rules', path: '/match-rules' },
-        { icon: Settings, label: 'Licenses', path: '/licenses' },
-        { icon: Settings, label: 'Rights Holders', path: '/rights-holders' },
+        { icon: SettingsIcon, label: 'Policies', path: '/policies' },
+        { icon: SettingsIcon, label: 'Match Rules', path: '/match-rules' },
+        { icon: SettingsIcon, label: 'Licenses', path: '/licenses' },
+        { icon: Users, label: 'Rights Holders', path: '/rights-holders' },
       ],
     },
     {
       title: 'CHANNELS & DISPUTES',
       items: [
-        { icon: Settings, label: 'Channels', path: '/channels' },
+        { icon: AlertCircle, label: 'Channels', path: '/channels' },
         { icon: AlertCircle, label: 'DMCA', path: '/dmca' },
         { icon: AlertCircle, label: 'Takedowns', path: '/takedowns' },
         { icon: AlertCircle, label: 'Strikes', path: '/strikes' },
@@ -59,6 +58,7 @@ const Sidebar: React.FC = () => {
     {
       title: 'BUSINESS',
       items: [
+        { icon: Music, label: 'Ownership', path: '/ownership' },
         { icon: DollarSign, label: 'Revenue', path: '/revenue' },
         { icon: BarChart3, label: 'Analytics', path: '/analytics' },
       ],
@@ -136,10 +136,6 @@ const Sidebar: React.FC = () => {
       </aside>
     </>
   )
-}
-
-function Settings() {
-  return <SettingsIcon />
 }
 
 export default Sidebar
